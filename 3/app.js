@@ -1,12 +1,9 @@
-$(document).ready(function () {
-
-    $("select").change(function(){
-        
-        let text =''
-        $("select option:selected").each (function(){
-            text += $(this).text()
-            
-        })
-        $("#para").html(text)
-    }).trigger("change")
-    })
+function sumSelected() {
+    let isChecked = $("input:checked").length;
+    $("#sum").text(isChecked);
+  }
+  sumSelected();
+  
+  $("input[type=checkbox]").click(function () {
+    sumSelected();
+  });
